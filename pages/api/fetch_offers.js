@@ -11,6 +11,7 @@ export default async function handler(req, res) {
     const data = await response.json();
 
     res.setHeader('Content-Type', 'application/json');
+    res.setHeader('Access-Control-Allow-Origin', 'https://myprimelifehub.com');
     res.status(200).json(data);
   } catch (error) {
     res.status(500).json({ Result: false, error: error.message });
