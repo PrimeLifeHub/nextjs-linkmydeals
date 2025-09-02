@@ -1,5 +1,7 @@
+import dotenv from 'dotenv';
+dotenv.config();
 export default async function handler(req, res) {
-  const api_key = '7ef866099caa3b69cc46c9d44a7f8284';
+  const api_key = process.env.LINKMYDEALS_API_KEY;
 
   try {
     const response = await fetch(`https://feed.linkmydeals.com/getOffers/?API_KEY=${api_key}&format=json`);
